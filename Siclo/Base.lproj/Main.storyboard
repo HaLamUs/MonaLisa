@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1wV-qA-pIz">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Siclo application-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Siclo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +17,87 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8g-Sv-m1U" userLabel="ViewSearchBar">
+                                <subviews>
+                                    <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="X80-IC-2Ro">
+                                        <color key="barTintColor" red="0.21960784310000001" green="0.42352941179999998" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MhZ-0h-Pk6">
+                                        <state key="normal" image="hambergermenu"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.21960784310000001" green="0.42352941179999998" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3nr-EZ-KXe"/>
+                                    <constraint firstItem="X80-IC-2Ro" firstAttribute="leading" secondItem="l8g-Sv-m1U" secondAttribute="leading" id="Eq7-zS-guF"/>
+                                    <constraint firstAttribute="trailing" secondItem="MhZ-0h-Pk6" secondAttribute="trailing" constant="10" id="HZn-2Z-nGH"/>
+                                    <constraint firstAttribute="bottom" secondItem="X80-IC-2Ro" secondAttribute="bottom" id="JKs-9R-5it"/>
+                                    <constraint firstItem="MhZ-0h-Pk6" firstAttribute="leading" secondItem="X80-IC-2Ro" secondAttribute="trailing" constant="10" id="Kp8-MK-NQH"/>
+                                    <constraint firstAttribute="bottom" secondItem="MhZ-0h-Pk6" secondAttribute="bottom" id="PX1-ZS-IFd"/>
+                                    <constraint firstItem="X80-IC-2Ro" firstAttribute="top" secondItem="l8g-Sv-m1U" secondAttribute="top" id="d2R-2s-gbc"/>
+                                    <constraint firstItem="MhZ-0h-Pk6" firstAttribute="top" secondItem="l8g-Sv-m1U" secondAttribute="top" id="uru-i0-G7A"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X2M-K9-jf2">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MonaTableViewCell" id="Tn4-dv-qSC" customClass="MonaTableViewCell" customModule="Siclo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tn4-dv-qSC" id="FaE-pw-i2Z">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="X2M-K9-jf2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0H0-qt-wKS"/>
+                            <constraint firstItem="l8g-Sv-m1U" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EJk-oO-gfC"/>
+                            <constraint firstAttribute="trailing" secondItem="X2M-K9-jf2" secondAttribute="trailing" id="GmC-Na-8lj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="X2M-K9-jf2" secondAttribute="bottom" id="Pdz-p0-iTp"/>
+                            <constraint firstItem="l8g-Sv-m1U" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="UZY-0x-4et"/>
+                            <constraint firstAttribute="trailing" secondItem="l8g-Sv-m1U" secondAttribute="trailing" id="YPO-JU-QXw"/>
+                            <constraint firstItem="X2M-K9-jf2" firstAttribute="top" secondItem="l8g-Sv-m1U" secondAttribute="bottom" id="tgc-hR-JWn"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Siclo application" id="mHo-vF-aOI"/>
+                    <connections>
+                        <outlet property="monaTableView" destination="X2M-K9-jf2" id="WFM-df-ka3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="973.60000000000002" y="355.7721139430285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="duY-JY-j1c">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1wV-qA-pIz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qcf-V9-T7Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.21960784310000001" green="0.42352941179999998" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="THv-VW-bN5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JD6-zR-rjn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114" y="356"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hambergermenu" width="48" height="48"/>
+    </resources>
 </document>
